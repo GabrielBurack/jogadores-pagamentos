@@ -1,8 +1,8 @@
 # 🏆 API de Gerenciamento de Pagamentos de Jogadores
 
 ## Alunos
-Gabriel Burack Rosa 
-João Elias Annes de Assis
+- Gabriel Burack Rosa 
+- João Elias Annes de Assis
 
 Este projeto é uma **API REST** desenvolvida em **Java** com **Spring Boot**, seguindo o padrão arquitetural **MVC**, com o objetivo de gerenciar os **pagamentos mensais** realizados por jogadores em campeonatos de futebol.
 
