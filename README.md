@@ -1,40 +1,77 @@
-Este projeto é uma API REST desenvolvida em Java com Spring Boot, seguindo o padrão arquitetural MVC, com objetivo de gerenciar os pagamentos mensais realizados por jogadores em campeonatos de futebol.
+# 🏆 API de Gerenciamento de Pagamentos de Jogadores
 
-Estrutura da Aplicação
-Jogador: representa um jogador que realiza pagamentos mensais.
-Pagamento: representa o pagamento realizado por um jogador.
+Este projeto é uma **API REST** desenvolvida em **Java** com **Spring Boot**, seguindo o padrão arquitetural **MVC**, com o objetivo de gerenciar os **pagamentos mensais** realizados por jogadores em campeonatos de futebol.
 
-As entidades estão relacionadas da seguinte forma:
-Um jogador pode realizar vários pagamentos (relação um-para-muitos).
-Um pagamento pertence a apenas um jogador (relação muitos-para-um).
+---
 
-Camada Repository
-Foi utilizada a interface JpaRepository do Spring Data para criar repositórios que permitem salvar, consultar e deletar jogadores e pagamentos sem a necessidade de escrever SQL manualmente.
+## 📦 Estrutura da Aplicação
 
-Camada Service
-Os serviços encapsulam a lógica de negócio e são responsáveis por coordenar o acesso aos dados e validar operações. Eles são chamados pelos controladores.
+### 🧍 Jogador
+Representa um jogador que realiza pagamentos mensais.
 
-Controladores (Controllers)
-São responsáveis por receber as requisições HTTP e responder com os dados apropriados. 
-Para Jogadores:
-GET /jogadores → Lista todos os jogadores
-POST /jogadores → Cadastra um novo jogador
-GET /jogadores/{id} → Busca um jogador pelo ID
+### 💳 Pagamento
+Representa o pagamento realizado por um jogador.
 
-Para Pagamentos:
-GET /pagamentos → Lista todos os pagamentos
-POST /pagamentos → Cadastra um novo pagamento
-GET /pagamentos/{id} → Busca um pagamento pelo ID
-GET /jogadores/{id}/pagamentos → Lista todos os pagamentos de um jogador específico
+### 🔗 Relacionamento entre entidades
+- Um **jogador** pode realizar **vários pagamentos** (relação *um-para-muitos*).
+- Um **pagamento** pertence a apenas **um jogador** (relação *muitos-para-um*).
 
-Como Testar a API
-Você pode testar os endpoints usando:
-->Postman
-->Insomnia
-->curl
-Ou qualquer ferramenta de teste de API REST
+---
 
-Conclusão
-Esse projeto demonstra um exemplo simples de API REST utilizando Spring Boot e JPA. Ele permite o cadastro de jogadores e o registro de seus pagamentos mensais, 
-om um modelo relacional bem definido e boa separação de responsabilidades em camadas (modelo, repositório, serviço e controlador). A interface gráfica não é necessária, 
-pois toda a comunicação ocorre via API HTTP.
+## 🗃️ Camadas da Aplicação
+
+### 📁 Repository
+Utiliza a interface `JpaRepository` do **Spring Data**, permitindo:
+- Salvar
+- Consultar
+- Deletar jogadores e pagamentos  
+Tudo isso sem necessidade de escrever SQL manualmente.
+
+### 🧠 Service
+Camada responsável por:
+- Encapsular a lógica de negócio
+- Validar operações
+- Coordenar o acesso aos dados
+
+Esses serviços são utilizados pelos controladores.
+
+### 🌐 Controllers
+Responsáveis por lidar com as requisições HTTP e retornar as respostas apropriadas.
+
+#### **Jogadores**
+- `GET /jogadores` → Lista todos os jogadores  
+- `POST /jogadores` → Cadastra um novo jogador  
+- `GET /jogadores/{id}` → Busca um jogador pelo ID  
+
+#### **Pagamentos**
+- `GET /pagamentos` → Lista todos os pagamentos  
+- `POST /pagamentos` → Cadastra um novo pagamento  
+- `GET /pagamentos/{id}` → Busca um pagamento pelo ID  
+- `GET /jogadores/{id}/pagamentos` → Lista todos os pagamentos de um jogador específico  
+
+---
+
+## 🧪 Como Testar a API
+
+Você pode testar os endpoints utilizando ferramentas como:
+
+- [Postman](https://www.postman.com/)
+- [Insomnia](https://insomnia.rest/)
+- `curl` via terminal
+- Qualquer outra ferramenta de testes para APIs REST
+
+---
+
+## ✅ Conclusão
+
+Este projeto demonstra um exemplo simples e funcional de uma **API REST** utilizando **Spring Boot** e **JPA**.  
+Permite o cadastro de jogadores e o registro de seus pagamentos mensais, com:
+
+- Modelo relacional bem definido
+- Boa separação de responsabilidades em camadas:
+  - Modelo
+  - Repositório
+  - Serviço
+  - Controlador
+
+> **Nota**: A interface gráfica não é necessária, pois toda a comunicação ocorre via **API HTTP**.
